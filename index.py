@@ -42,20 +42,20 @@ for i, row in data.iterrows():
 
     # Applying surface-level normalization
     # --> add your Python code here
-    normalized_text = text.lower()
-    normalized_text = normalized_text.translate(str.maketrans('', '', string.punctuation))
+    normalizedText = text.lower()
+    normalizedText = normalizedText.translate(str.maketrans('', '', string.punctuation))
 
     # Tokenizing the document
     # --> add your Python code here
-    tokens = normalized_text.split()
+    tokens = normalizedText.split()
 
     # Applying lemmatization
     # --> add your Python code here
-    lemmatized_text = [lemmas.get(token, token) for token in tokens]
+    lemmatizedText = [lemmas.get(token, token) for token in tokens]
 
     # Building the inverted index
     # --> add your Python code here
-    for term in lemmatized_text:
+    for term in lemmatizedText:
         if term not in invertedIndex:
             invertedIndex[term] = set()
         invertedIndex[term].add(docID)
